@@ -3,6 +3,7 @@ This is a simplified version of [Neuraltalk2](https://github.com/karpathy/neural
 It takes general-features/sentence pairs as input, and uses them to train a language model.
 
 ## Data Preparation
+0. `$ mkdir output` to make a dictionary for word counting file.
 1. Provide path-to-feature/caption pair list in the following json format:  
 [{file_path: 'path/feature1.h5', captions: ['a caption', ...]}, ...]
 
