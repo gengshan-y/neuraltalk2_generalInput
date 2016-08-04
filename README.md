@@ -7,8 +7,8 @@ It takes features/sentence pairs as input, and uses them to train a language mod
 [{file_path: 'path/feature1.h5', captions: ['a caption', ...]}, ...]
 
 2. Then call prepro.py to gather training data in an .h5 file and a .json file.
-**Usage**: python prepro.py --input_json path-to-list --num_val max-num-splited-to-val
-**e.g.**   python prepro.py --input_json data/test_input.json --num_val 2
+**Usage**: python prepro.py --input_json path-to-list --num_val max-num-splited-to-val 
+**e.g.**   python prepro.py --input_json data/test_input.json --num_val 2 
 
 #### output json format
 {
