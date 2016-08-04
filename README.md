@@ -1,27 +1,27 @@
-# neuraltalk2_modification
+# neuraltalk2_generalInput
 This is a simplified version of [Neuraltalk2](https://github.com/karpathy/neuraltalk2). 
-It takes features/sentence pairs as input, and uses them to train a language model.
+It takes general-features/sentence pairs as input, and uses them to train a language model.
 
 ## Data Preparation
 1. Provide path-to-feature/caption pair list in the following json format:  
 [{file_path: 'path/feature1.h5', captions: ['a caption', ...]}, ...]
 
-2. Then call prepro.py to gather training data in an .h5 file and a .json file.
-**Usage**: python prepro.py --input_json path-to-list --num_val max-num-splited-to-val 
+2. Then call prepro.py to gather training data in an .h5 file and a .json file.  
+**Usage**: python prepro.py --input_json path-to-list --num_val max-num-splited-to-val  
 **e.g.**   python prepro.py --input_json data/test_input.json --num_val 2 
 
 #### output json format
-{
+{  
 'ix_to_word'[vocab-index mapping form {ix:'word'}, where ix is 1-indexed]:  
 'feats_info'[a list of pairs stores the split info and feature path]:  
 }
 
 #### output h5 format
-/feats is (N,4096) float32 array of feature data, N is the number of images
+/feats is (N,4096) float32 array of feature data, N is the number of images  
 /labels is (M,max_length) uint32 array of encoded labels, zero padded, M is the number of captions
 
 ## Train the network
-Then run the training code:
+Then run the training code:  
 **Usage:** th train.lua -input_h5 training-h5 -input_json training-json - checkpoint_path output-checkpoint-path -id task-id  
 **e.g.**   th train.lua -input_h5 data/data.h5 -input_json data/data.json -checkpoint_history_path output/ -id 1
 
