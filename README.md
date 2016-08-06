@@ -3,7 +3,6 @@ This is a simplified version of [Neuraltalk2](https://github.com/karpathy/neural
 It takes general-features/sentence pairs as input, and uses them to train a language model.
 
 ## Data Preparation
-0. `$ mkdir output` to make a dictionary for word counting file.
 1. Provide path-to-feature/caption pair list in the following json format:  
 [{file_path: 'path/feature1.h5', captions: ['a caption', ...]}, ...]
 
@@ -30,7 +29,7 @@ Then run the training code:
 #### prepro.py
   1. It preprocesses the corpus, and assigns the train-val split.
   
-  2. It also generates a wordCount.txt file in output/ folder that counts the vacab frequency.
+  2. It also generates a wordCount.txt file that counts the vacab frequency.
 
   3. Change line 190-194 to modify feature-dimension and feature-name(as stored in hdf5 file)
 
