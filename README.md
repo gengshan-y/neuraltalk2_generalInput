@@ -7,8 +7,8 @@ It takes general-features/sentence pairs as input, and uses them to train a lang
 [{file_path: 'path/feature1.h5', captions: ['a caption', ...]}, ...]
 
 2. Then call prepro.py to gather training data in an .h5 file and a .json file.  
-**Usage**: `python prepro.py --input_json path-to-list --num_val max-num-splited-to-val`  
-**e.g.**   `python prepro.py --input_json data/test_input.json --num_val 2`
+**Usage**: `python prepro.py --input_json path-to-list --num_val max-num-splited-to-val --output_json path-to-output-json --output_h5 path-to-output-h5`  
+**e.g.**   `python prepro.py --input_json data/test_input.json --num_val 2 --output_json data/data.json --output_h5 data/data.h5`
 
 #### output json format
 {  
@@ -51,3 +51,7 @@ Then run the training code:
   4. We modified the code to sample sentences during training and valication phase in line 221-225
   and line 302-312.
 
+## Modification from the original code
+* train.lua  
+* misc/DataLoader.lua  
+* misc/net_utils.lua (to replace CNN with a fully connected layer)
