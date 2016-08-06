@@ -47,10 +47,12 @@ def build_vocab(featPairs, params):
       sent_lengths[nw] = sent_lengths.get(nw, 0) + 1
   max_len = max(sent_lengths.keys())
   print 'max length sentence in raw data: ', max_len
-  print 'sentence length distribution (count, number of words):'
   sum_len = sum(sent_lengths.values())
+  print sum_len, ' sentences in total'
+  print total_words / sum_len, ' words per sentece in average' 
+  print 'sentence length distribution (count, number of words):'
   for i in xrange(max_len+1):
-    print '%2d: %10d   %f%%' % (i, sent_lengths.get(i,0), sent_lengths.get(i,0)*100.0/sum_len)
+    print '%2d| %10d|  %f%%' % (i, sent_lengths.get(i,0), sent_lengths.get(i,0)*100.0/sum_len)
 
   # lets now produce the final annotations
   if bad_count > 0:
