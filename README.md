@@ -51,6 +51,9 @@ Then run the training code:
   4. We modified the code to sample sentences during training and valication phase in line 221-225
   and line 302-312.
 
+## TODO
+* merge with the caption-eval code.
+
 ## Modification from the original code
 * train.lua  
 * misc/DataLoader.lua  
